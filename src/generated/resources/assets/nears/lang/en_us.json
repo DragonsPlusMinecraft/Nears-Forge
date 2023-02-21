@@ -1,7 +1,10 @@
 {
   "block.nears.faar_bush": "Faar Bush",
+  "block.nears.faar_crate": "Faar Crate",
   "block.nears.near_bush": "Near Bush",
+  "block.nears.near_crate": "Near Crate",
   "block.nears.soul_berry_bush": "Soul Berry Bush",
+  "block.nears.soul_berry_sack": "Soul Berry Sack",
   "item.nears.faar": "Faar",
   "item.nears.faar_seeds": "Faar Seeds",
   "item.nears.faarade": "Faarade",

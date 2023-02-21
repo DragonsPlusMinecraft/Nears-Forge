@@ -1,7 +1,10 @@
 {
   "block.nears.faar_bush": "法尔果丛",
+  "block.nears.faar_crate": "箱装法尔果",
   "block.nears.near_bush": "涅尔果丛",
+  "block.nears.near_crate": "箱装涅尔果",
   "block.nears.soul_berry_bush": "灵魂浆果丛",
+  "block.nears.soul_berry_sack": "袋装灵魂浆果",
   "item.nears.faar": "法尔果",
   "item.nears.faar_seeds": "法尔种子",
   "item.nears.faarade": "法尔果汁",

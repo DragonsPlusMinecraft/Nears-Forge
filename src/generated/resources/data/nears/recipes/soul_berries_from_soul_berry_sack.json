@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "nears:soul_berry_sack"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "nears:soul_berries"
+  }
+}

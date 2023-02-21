@@ -20,4 +20,15 @@ public class NearsBlockStates {
         });
     }
     
+    public static void cubeBottomTop(DataGenContext<Block, ? extends Block> ctx,
+                                     RegistrateBlockstateProvider prov)
+    {
+        prov.simpleBlock(ctx.get(), prov.models().cubeBottomTop(
+            ctx.getName(),
+            prov.modLoc("block/" + ctx.getName() + "_side"),
+            prov.modLoc("block/" + ctx.getName() + "_bottom"),
+            prov.modLoc("block/" + ctx.getName() + "_top")
+        ));
+    }
+    
 }

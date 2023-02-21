@@ -7,6 +7,7 @@ import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullConsumer;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -24,6 +25,7 @@ public class NearsItems {
     public static final ItemEntry<Item> NEAR = REGISTRATE.foodItem("near", NearsFoods.NEAR)
         .onRegister(compostable(0.3))
         .recipe((ctx, prov) -> prov.smelting(DataIngredient.items(ctx), () -> Items.ORANGE_DYE, 0.3F))
+        .tag(ItemTags.PIGLIN_FOOD)
         .register();
     
     public static final ItemEntry<Item> FAAR = REGISTRATE.foodItem("faar", NearsFoods.FAAR)
@@ -34,6 +36,7 @@ public class NearsItems {
     public static final ItemEntry<ItemNameBlockItem> SOUL_BERRIES = REGISTRATE
         .item("soul_berries", prop -> new ItemNameBlockItem(NearsBlocks.SOUL_BERRY_BUSH.get(), prop))
         .properties(prop -> prop.food(NearsFoods.SOUL_BERRIES))
+        .tag(ItemTags.FOX_FOOD)
         .onRegister(compostable(0.3))
         .register();
     

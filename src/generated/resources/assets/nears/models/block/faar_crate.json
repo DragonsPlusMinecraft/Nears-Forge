@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "nears:block/faar_crate_bottom",
+    "side": "nears:block/faar_crate_side",
+    "top": "nears:block/faar_crate_top"
+  }
+}
