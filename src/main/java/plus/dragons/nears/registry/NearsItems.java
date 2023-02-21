@@ -9,26 +9,31 @@ import com.tterrag.registrate.util.nullness.NonNullConsumer;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.ComposterBlock;
 import plus.dragons.nears.Nears;
 import plus.dragons.nears.common.item.CurativeDrinkItem;
+import plus.dragons.nears.common.item.FoodItem;
 
 public class NearsItems {
     
     private static final NearsRegistrate REGISTRATE = Nears.REGISTRATE
         .creativeModeTab(() -> CreativeModeTab.TAB_FOOD);
     
-    public static final ItemEntry<Item> NEAR = REGISTRATE.foodItem("near", NearsFoods.NEAR)
+    public static final ItemEntry<Item> NEAR = REGISTRATE.item("near")
+        .properties(prop -> prop.food(NearsFoods.NEAR))
         .onRegister(compostable(0.3))
         .recipe((ctx, prov) -> prov.smelting(DataIngredient.items(ctx), () -> Items.ORANGE_DYE, 0.3F))
         .tag(ItemTags.PIGLIN_FOOD)
         .register();
     
-    public static final ItemEntry<Item> FAAR = REGISTRATE.foodItem("faar", NearsFoods.FAAR)
+    public static final ItemEntry<Item> FAAR = REGISTRATE.item("faar")
+        .properties(prop -> prop.food(NearsFoods.FAAR))
         .onRegister(compostable(0.3))
         .recipe((ctx, prov) -> prov.smelting(DataIngredient.items(ctx), () -> Items.CYAN_DYE, 0.3F))
         .register();
@@ -78,6 +83,30 @@ public class NearsItems {
             .unlockedBy("has_ghast_tear", RegistrateRecipeProvider.has(Items.GHAST_TEAR))
             .save(prov))
         .addMiscData(ProviderType.LANG, prov -> prov.add("tooltip.nears.soulda.effect", "Clears Wither Effect"))
+        .register();
+    
+    public static final ItemEntry<FoodItem> GLOWY_SALAD = REGISTRATE.foodItem("glowy_salad", NearsFoods.GLOWY_SALAD)
+        .properties(prop -> prop.stacksTo(16).craftRemainder(Items.BOWL))
+        .recipe((ctx, prov) -> ShapelessRecipeBuilder.shapeless(ctx.get())
+            .requires(Items.BOWL)
+            .requires(NEAR.get())
+            .requires(Items.GLOW_BERRIES)
+            .requires(Items.GLOWSTONE_DUST)
+            .unlockedBy("has_near", RegistrateRecipeProvider.has(NEAR.get()))
+            .unlockedBy("has_glow_berries", RegistrateRecipeProvider.has(Items.GLOW_BERRIES))
+            .save(prov))
+        .register();
+    
+    public static final ItemEntry<FoodItem> SOUL_SUNDAE = REGISTRATE.foodItem("soul_sundae", NearsFoods.SOUL_SUNDAE)
+        .properties(prop -> prop.stacksTo(16).craftRemainder(Items.GLASS_BOTTLE))
+        .recipe((ctx, prov) -> ShapelessRecipeBuilder.shapeless(ctx.get())
+            .requires(Items.GLASS_BOTTLE)
+            .requires(FAAR.get())
+            .requires(SOUL_BERRIES.get())
+            .requires(ItemTags.SOUL_FIRE_BASE_BLOCKS)
+            .unlockedBy("has_faar", RegistrateRecipeProvider.has(FAAR.get()))
+            .unlockedBy("has_soul_berries", RegistrateRecipeProvider.has(SOUL_BERRIES.get()))
+            .save(prov))
         .register();
     
     static  {

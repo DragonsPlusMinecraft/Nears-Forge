@@ -5,6 +5,7 @@ import com.tterrag.registrate.builders.ItemBuilder;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
+import plus.dragons.nears.common.item.FoodItem;
 
 public class NearsRegistrate extends AbstractRegistrate<NearsRegistrate> {
     
@@ -25,8 +26,8 @@ public class NearsRegistrate extends AbstractRegistrate<NearsRegistrate> {
         return this.item(name, Item::new);
     }
     
-    public ItemBuilder<Item, NearsRegistrate> foodItem(String name, FoodProperties food) {
-        return this.item(name, Item::new).properties(prop -> prop.food(food));
+    public ItemBuilder<FoodItem, NearsRegistrate> foodItem(String name, FoodProperties food) {
+        return this.item(name, FoodItem::new).properties(prop -> prop.food(food));
     }
     
 }

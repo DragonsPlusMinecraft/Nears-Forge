@@ -19,6 +19,14 @@ public class NearsFoods {
     public static final FoodProperties SOULDA = drink()
         .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 600), 1.0F).build();
     
+    public static final FoodProperties GLOWY_SALAD = food(4, 0.4)
+        .effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 1200), 1.0F)
+        .effect(() -> new MobEffectInstance(MobEffects.GLOWING, 600), 0.8F).build();
+    
+    public static final FoodProperties SOUL_SUNDAE = food(4, 0.4)
+        .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200), 1.0F)
+        .effect(() -> new MobEffectInstance(MobEffects.WEAKNESS, 600), 0.8F).build();
+    
     private static FoodProperties.Builder food(int nutrition, double saturationMod) {
         return new FoodProperties.Builder().nutrition(nutrition).saturationMod((float) saturationMod);
     }

@@ -24,15 +24,9 @@ import java.util.List;
 import java.util.Map;
 
 public class FoodItem extends Item {
-    protected boolean hasEffects;
     
-    @SuppressWarnings("deprecation")
     public FoodItem(Properties properties) {
         super(properties);
-        var food = this.getFoodProperties();
-        if (food == null)
-            throw new IllegalArgumentException("FoodItem must be edible");
-        this.hasEffects = !((FoodPropertiesAccessor)food).getRawEffects().isEmpty();
     }
     
     @Override
@@ -54,7 +48,14 @@ public class FoodItem extends Item {
     }
     
     protected boolean hasEffectTooltip(ItemStack stack, @Nullable Level level) {
-        return hasEffects;
+        if (level == null || !level.isClientSide)
+            return false;
+        
+        var food = stack.getFoodProperties(Minecraft.getInstance().player);
+        if (food == null)
+            return false;
+        
+        return !food.getEffects().isEmpty();
     }
     
     protected void appendEffectTooltip(ItemStack stack, @Nullable Level level, List<Component> tooltips, TooltipFlag advanced) {
@@ -67,7 +68,11 @@ public class FoodItem extends Item {
         var food = stack.getFoodProperties(Minecraft.getInstance().player);
         assert food != null;
         
-        List<MobEffectInstance> effects = food.getEffects().stream().map(Pair::getFirst).toList();
+        List<MobEffectInstance> effects = food.getEffects()
+            .stream()
+            .filter(entry -> entry.getSecond() + 1e-5 > 1)//Only show inevitable effects
+            .map(Pair::getFirst)
+            .toList();
         List<Pair<Attribute, AttributeModifier>> attributes = Lists.newArrayList();
         
         for (MobEffectInstance effectInstance : effects) {
@@ -102,10 +107,7 @@ public class FoodItem extends Item {
         
         if (!attributes.isEmpty()) {
             tooltips.add(CommonComponents.EMPTY);
-            var whenUse = (this.getUseAnimation(stack) == UseAnim.DRINK
-                ? Component.translatable("potion.whenDrank")
-                : Component.translatable("food.whenAte")).withStyle(ChatFormatting.DARK_PURPLE);
-            tooltips.add(whenUse);
+            tooltips.add(Component.translatable("potion.whenDrank").withStyle(ChatFormatting.DARK_PURPLE));
         
             for (Pair<Attribute, AttributeModifier> pair : attributes) {
                 AttributeModifier modifier = pair.getSecond();
