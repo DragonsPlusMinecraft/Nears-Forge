@@ -1,0 +1,16 @@
+{
+  "block.nears.faar_bush": "ɥsnᗺ ɹɐɐℲ",
+  "block.nears.near_bush": "ɥsnᗺ ɹɐǝN",
+  "block.nears.soul_berry_bush": "ɥsnᗺ ʎɹɹǝᗺ ןnoS",
+  "item.nears.faar": "ɹɐɐℲ",
+  "item.nears.faar_seeds": "spǝǝS ɹɐɐℲ",
+  "item.nears.faarade": "ǝpɐɹɐɐℲ",
+  "item.nears.near": "ɹɐǝN",
+  "item.nears.near_seeds": "spǝǝS ɹɐǝN",
+  "item.nears.nearade": "ǝpɐɹɐǝN",
+  "item.nears.soul_berries": "sǝıɹɹǝᗺ ןnoS",
+  "item.nears.soulda": "ɐpןnoS",
+  "tooltip.nears.faarade.effect": "ʇɔǝɟɟƎ ssǝuʍoןS sɹɐǝןƆ",
+  "tooltip.nears.nearade.effect": "ʇɔǝɟɟƎ ssǝuʞɐǝM sɹɐǝןƆ",
+  "tooltip.nears.soulda.effect": "ʇɔǝɟɟƎ ɹǝɥʇıM sɹɐǝןƆ"
+}

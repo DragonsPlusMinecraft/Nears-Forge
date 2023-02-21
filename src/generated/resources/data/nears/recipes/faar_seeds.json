@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "nears:faar"
+    }
+  ],
+  "result": {
+    "item": "nears:faar_seeds"
+  }
+}

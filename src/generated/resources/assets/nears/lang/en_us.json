@@ -1,0 +1,16 @@
+{
+  "block.nears.faar_bush": "Faar Bush",
+  "block.nears.near_bush": "Near Bush",
+  "block.nears.soul_berry_bush": "Soul Berry Bush",
+  "item.nears.faar": "Faar",
+  "item.nears.faar_seeds": "Faar Seeds",
+  "item.nears.faarade": "Faarade",
+  "item.nears.near": "Near",
+  "item.nears.near_seeds": "Near Seeds",
+  "item.nears.nearade": "Nearade",
+  "item.nears.soul_berries": "Soul Berries",
+  "item.nears.soulda": "Soulda",
+  "tooltip.nears.faarade.effect": "Clears Slowness Effect",
+  "tooltip.nears.nearade.effect": "Clears Weakness Effect",
+  "tooltip.nears.soulda.effect": "Clears Wither Effect"
+}

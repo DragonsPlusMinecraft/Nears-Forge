@@ -1,13 +1,16 @@
 {
   "required": true,
-  "minVersion": "0.8",
-  "package": "net.digitalpear.nears.mixin",
+  "priority": 1000,
+  "package": "plus.dragons.nears.mixin",
   "compatibilityLevel": "JAVA_17",
+  "refmap": "nears.refmap.json",
   "mixins": [
+    "FoodPropertiesAccessor"
   ],
   "client": [
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "minVersion": "0.8"
 }

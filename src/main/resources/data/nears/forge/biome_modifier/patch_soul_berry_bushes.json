@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#nears:has_feature/soul_berry_bushes",
+  "features": "nears:patch_soul_berry_bushes",
+  "step": "vegetal_decoration"
+}

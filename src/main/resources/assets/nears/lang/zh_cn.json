@@ -1,0 +1,16 @@
+{
+  "block.nears.faar_bush": "法尔果丛",
+  "block.nears.near_bush": "涅尔果丛",
+  "block.nears.soul_berry_bush": "灵魂浆果丛",
+  "item.nears.faar": "法尔果",
+  "item.nears.faar_seeds": "法尔种子",
+  "item.nears.faarade": "法尔果汁",
+  "item.nears.near": "涅尔果",
+  "item.nears.near_seeds": "涅尔种子",
+  "item.nears.nearade": "涅尔果汁",
+  "item.nears.soul_berries": "灵魂浆果",
+  "item.nears.soulda": "灵魂苏打",
+  "tooltip.nears.faarade.effect": "清除缓慢效果",
+  "tooltip.nears.nearade.effect": "清除虚弱效果",
+  "tooltip.nears.soulda.effect": "清除凋零效果"
+}

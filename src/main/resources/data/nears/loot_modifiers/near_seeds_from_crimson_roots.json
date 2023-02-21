@@ -1,0 +1,40 @@
+{
+  "type": "nears:replace_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:blocks/crimson_roots"
+    },
+    {
+      "condition": "minecraft:random_chance",
+      "chance": 0.125
+    },
+    {
+      "condition": "minecraft:inverted",
+      "term": {
+        "condition": "minecraft:alternative",
+        "terms": [
+          {
+            "condition": "forge:can_tool_perform_action",
+            "action": "shears_dig"
+          },
+          {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "enchantments": [
+                {
+                  "enchantment": "minecraft:silk_touch",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "item": "minecraft:crimson_roots",
+  "loot_table": "nears:loot_modifiers/near_seeds_from_crimson_roots"
+}
