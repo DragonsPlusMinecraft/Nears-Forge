@@ -1,6 +1,5 @@
 package plus.dragons.nears.registry;
 
-
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
@@ -9,12 +8,10 @@ import com.tterrag.registrate.util.nullness.NonNullConsumer;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.ComposterBlock;
 import plus.dragons.nears.Nears;
 import plus.dragons.nears.common.item.CurativeDrinkItem;
